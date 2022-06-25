@@ -1,0 +1,45 @@
+{
+    "manifest_version":2,
+    "name":"ChangeLanguage",
+    "version":"1.0",
+    "description":"chenged the  subtitls Language",
+    "icons":{
+        "128":"icon128.png",
+        "48":"icon48.png",
+        "16":"icon16.png"
+
+    },
+    
+    "page_action": {
+        "default_icon": {
+            "16":"icon16.png",
+            "48": "icon48.png",
+            "128": "icon128.png",
+            "240": "icon240.png"
+        },
+        "default_title": "Language Learning With LLY",
+        "default_popup": "popup.html"
+    },
+
+    "background":{
+        "scripts":["jquery-3.6.0.min.js","eventPage.js"]
+       
+    },
+    
+    "content_scripts":[
+        {
+            "matches":["http://www.youtube.com/*", "https://www.youtube.com/*"],
+            "js":["jquery-3.6.0.min.js","content.js"],
+            "css":["content.css"]
+        }
+    ],
+
+    "permissions":[
+        "tabs",
+        "http://www.youtube.com/*",
+        "https://www.youtube.com/*"
+      
+       
+    ]
+    
+}
